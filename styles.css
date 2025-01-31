@@ -1,0 +1,221 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* the used reset can be found at: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+@font-face {
+    font-family: 'courier-primebold';
+    src: url('fonts/courier-prime/courier_prime_bold-webfont.woff2') format('woff2'),
+         url('fonts/courier-prime/courier_prime_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+    font-weight: normal;
+
+    --bg-light: #FFF0DC;
+    --bg-dark: #F0BB78;
+    --accent: #543A14;
+    --dark: #131010;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("imgs/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    /* filter: blur(4px); */
+    z-index: -1;
+}
+
+.main-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex: auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-items: left;
+    align-items: center;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    min-width: 500px;
+    padding: 20px 40px;
+    position: relative;
+    top: -200px;
+    flex: auto;
+    border-radius: 15px 0 0 15px;
+    width: 100vw;
+}
+
+.logo img {
+    height: 120px;
+    margin: 0;
+}
+
+.logo h1 {
+    color: white;
+    font-family: 'courier-primebold', display;
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+.content {
+    background-color: var(--bg-light);
+    /* padding: 20px; */
+    border-radius: 14px;
+    height: 95vh;
+    align-self: center;
+    flex: none;
+    max-width: max(50vw, 600px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    max-width: 800px;
+}
+
+.content h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.hero {
+    padding: 20px;
+}
+
+.info {
+    background-color: var(--bg-dark);
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em 0.5em;
+    gap: 1em;
+    box-shadow: 0 3px 3px -3px var(--dark);
+    padding: 1.5rem 0;
+}
+
+.input-field {
+    width: 45%;
+}
+
+.input-field label {
+    font-size: 0.6rem;
+    display: block;
+}
+
+input {
+    margin: 0;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid var(--dark);
+    background-color: var(--bg-light);
+}
+
+button[type='submit'] {
+    margin: 1.5em 20px;
+    padding: 0.5em 1.5em;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--accent);
+    color: #FFF0DC;
+    font-family: 'courier-primebold';
+    box-shadow: 2px 2px 3px var(--dark);
+    cursor: pointer;
+}
+
+.login {
+    margin: 0 20px;
+}
+
+a, :visited {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: var(--dark);
+}
+
+
+input:invalid, input:required {
+    border: 2px solid #710c04;
+    position: relative;
+}
+
+.required {
+    position: relative;
+}
+
+.required::after {
+    content: '*';
+    color: #710c04;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+}
